@@ -38,7 +38,7 @@ public class OfferManagerTest {
     @Test
     public void sortOnSearch() {
         Offer[] expected = new Offer[]{offer1, offer3, offer4};
-        Offer[] actual = manager.findAll("SVO","SVX");
+        Offer[] actual = manager.findAll("SVO","SVX", OfferByTimeAscComparator);
         assertArrayEquals(expected, actual);
     }
 
