@@ -18,10 +18,11 @@ public class Offer implements Comparable<Offer>{
     return getFrom().equalsIgnoreCase(from) && getTo().equalsIgnoreCase(to);
   }
 
-  public Offer(int price, String from, String to) {
+  public Offer(int price, String from, String to, int timeTravel) {
     this.price = price;
-    this.to = to;
     this.from = from;
+    this.to = to;
+    this.timeTravel = timeTravel;
   }
 
   @Override
