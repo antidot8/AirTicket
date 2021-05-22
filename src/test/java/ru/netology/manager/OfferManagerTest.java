@@ -16,7 +16,10 @@ public class OfferManagerTest {
     private Offer offer2 = new Offer(2500, "OVB", "DME");
     private Offer offer3 = new Offer(3300, "SVO", "SVX");
     private Offer offer4 = new Offer(4200, "SVO", "SVX");
-    private Offer offer5 = new Offer(5100, "OVB", "DME");
+    private Offer offer5 = new Offer(5100, "SVO", "DME");
+    private Offer offer6 = new Offer(2100, "OVB", "DME");
+    private Offer offer7 = new Offer(3100, "OVB", "DME");
+
 
     @BeforeEach
     void setUp() {
@@ -25,12 +28,14 @@ public class OfferManagerTest {
         manager.add(offer3);
         manager.add(offer4);
         manager.add(offer5);
+        manager.add(offer6);
+        manager.add(offer7);
     }
 
     @Test
     public void shouldSortByPrice() {
-        Offer[] expected = new Offer[]{offer1, offer2, offer3, offer4, offer5};
-        Offer[] actual = new Offer[]{offer3, offer1, offer2, offer5, offer4};
+        Offer[] expected = new Offer[]{offer1, offer6, offer2, offer7, offer3, offer4, offer5};
+        Offer[] actual = new Offer[]{offer3, offer1, offer2, offer5, offer7, offer4, offer6};
         Arrays.sort(actual);
         assertArrayEquals(expected, actual);
     }
@@ -65,7 +70,7 @@ public class OfferManagerTest {
 
     @Test
     public void searchIfExistAll() {
-        Offer[] expected = new Offer[]{offer2, offer5};
+        Offer[] expected = new Offer[]{offer6, offer2, offer7};
         Offer[] actual = manager.findAll("OVB", "DME");
         assertArrayEquals(expected, actual);
     }
