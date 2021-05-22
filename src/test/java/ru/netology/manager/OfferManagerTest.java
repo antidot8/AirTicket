@@ -22,7 +22,6 @@ public class OfferManagerTest {
     private final Offer offer6 = new Offer(2100, "OVB", "DME", 110);
     private final Offer offer7 = new Offer(3100, "OVB", "DME", 90);
 
-
     @BeforeEach
     void setUp() {
         manager.add(offer1);
